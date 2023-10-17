@@ -1,0 +1,43 @@
+.wrapper_404{
+    @extend .d-flex, .flex-row, .align-items-center;
+    justify-content: center;
+    @include media-down(md) {
+        flex-direction: column;
+    }
+    .left-side{
+        img{
+            max-height: 600px;
+        }
+        @include media-down(md) {
+            img{
+                max-height: 450px;
+            }
+        }
+    }
+    .right-side{
+        padding-left: 24px;
+        h1{
+            @extend .fz-54, .Avenir-Bold;
+            line-height: 1.2;
+        }
+        p{
+            @extend .fz-30, .lh-27, .mb-16;
+        }
+        .Button{
+            margin-top: 16px;
+            padding: 19px;
+        }
+        @include media-down(md) {
+            padding-left: 0;
+            h1{
+                margin-top: 16px;
+            }
+            h1,p{
+                text-align: center;
+            }
+            .Button{
+                margin: auto;
+            }
+        }
+    }
+}

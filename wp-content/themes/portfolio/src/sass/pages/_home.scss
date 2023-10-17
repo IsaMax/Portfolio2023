@@ -1,0 +1,41 @@
+.home {
+
+    section:not(.hero-home, .section-footer ) {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    #section-match-en-bref {
+
+        background: linear-gradient(180deg, #FFFFFF 0%, #F1F2F4 100%);
+
+        > div {
+            gap: 68px;
+
+            > div {
+                flex: 1;
+            }
+        }
+
+        @include media-down(lg) {
+            .bloc-match_a_venir,
+            .bloc-en_bref {
+                width: 100%;
+            }
+
+            > div > div {
+                flex: unset;
+            }
+        }
+    }
+
+    section.notre-histoire {
+        padding-top: 55px;
+        padding-bottom: 42px;
+
+        @include media-down(md) {
+            padding-top: 26px;
+            padding-bottom: 15px;
+          }
+    }
+}

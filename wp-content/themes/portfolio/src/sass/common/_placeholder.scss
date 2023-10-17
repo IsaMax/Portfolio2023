@@ -1,0 +1,316 @@
+/* // POSITION
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.absolute-vertical {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.absolute-horizontal {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.transition-0-2 {
+  transition: all 0.2s ease;
+}
+
+.transition-0-3 {
+  transition: all 0.3s ease;
+}
+
+// Display
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+// FLEXBOX
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+// BLOCKS
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.texte-shadow {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $blanc;
+}
+
+// FONTS
+.Avenir-Bold {
+  font-family: "Avenir-Bold", sans-serif;
+}
+
+.Avenir-semiBold {
+  font-family: "Avenir-semiBold", sans-serif;
+}
+
+.Avenir-Medium {
+  font-family: "Avenir-Medium", sans-serif;
+}
+
+.Avenir-Regular {
+  font-family: "Avenir-Regular", sans-serif;
+}
+
+.Avenir-Heavy {
+  font-family: "Avenir-Heavy", sans-serif;
+}
+
+.AvenirNext-Regular {
+  font-family: "AvenirNext-Regular", sans-serif;
+}
+
+.Avenir-BoldItalic {
+  font-family: "Avenir-BoldItalic", sans-serif;
+}
+
+.Avenir-Italic {
+  font-family: "Avenir-Italic", sans-serif;
+}
+
+.AvenirCondensed-BoldItalic {
+  font-family: "AvenirCondensed-BoldItalic", sans-serif;
+}
+
+// TEXTS
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-start {
+  text-align: start;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+// HIDDEN
+.all-hidden {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+  left: -999%;
+}
+
+.hidden-block {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible-block {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.hide_on_mobile {
+  @include media-down(md) {
+    display: none;
+  }
+}
+
+.hide_on_desktop {
+  display: none;
+}
+
+.show_on_mobile {
+  @include media-down(md) {
+    display: block;
+  }
+}
+
+.show-on-tablet {
+  display: none;
+  @include media-down(lg) {
+    display: block;
+  }
+}
+
+.hide-on-tablet {
+  display: block;
+  @include media-down(lg) {
+    display: none;
+  }
+}
+
+.show_on_desktop {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.content-0 {
+  content: "";
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.bgBleuClair {
+  background-color: $bleuClair;
+}
+
+.bgBleuGris {
+  background-color: $bleuGris;
+}
+
+.bgBleuFonce {
+  background-color: $bleuFonce;
+}
+
+.bgBlanc {
+  background-color: #fff;
+}
+
+.bgGrisClair {
+  background-color: $grisClair;
+}
+
+.bgGrisTresClair {
+  background-color: $gristresclair;
+}
+
+.cBleuGris {
+  color: $bleuGris;
+}
+
+.cBleuClair {
+  color: $bleuClair;
+}
+
+.cBleuFonce {
+  color: $bleuFonce;
+}
+
+.cBlanc {
+  color: #fff;
+}
+
+.errorresponse {
+  @extend .fz-37, .Avenir-Bold, .uppercase, .text-align-center;
+  padding: 50px 0;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-deactivate, [disabled] {
+  pointer-events: none;
+  opacity: .5;
+} */

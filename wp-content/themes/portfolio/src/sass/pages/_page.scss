@@ -1,0 +1,208 @@
+.page-besoin-daide {
+  background: #fcfcfc;
+}
+
+.is-ajax-search-result {
+  top: 129px !important;
+  position: fixed !important;
+
+  .is-ajax-search-details a {
+    @extend .cBleuClair;
+  }
+
+  .is-show-more-results-text {
+    @extend .Button, .h-46, .cBlanc, .bgBleuClair, .w-100;
+  }
+
+  @include media-down(md) {
+    top: 110px !important;
+    left: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+.single-effectif {
+  .container-photos,
+  .bloc-cards,
+  .blocs-effectif__poste_occupe > div {
+    width: 55vw;
+
+    @include media-down(xl) {
+      width: 100%;
+    }
+
+    .get-more {
+      @include media-down(xl) {
+      }
+    }
+  }
+
+  @include media-down(xl) {
+    .bloc_2_colonnes--1-2-1 {
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+
+      .bloc_2_colonnes__two {
+        display: flex;
+        gap: 16px;
+
+        > * {
+          flex: unset;
+          width: 100%;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .get-more--2-par-ligne {
+      padding-bottom: 0;
+    }
+  }
+
+  @include media-down(lg) {
+    .bloc_2_colonnes--1-2-1 {
+      .bloc_2_colonnes__one,
+      .bloc_2_colonnes__two {
+        grid-column: span 1 / span 1;
+      }
+    }
+
+    .Widget--simple.Widget--Card .Widget__images img {
+      height: 120px;
+    }
+  }
+
+  @include media-down(md) {
+    .bloc_2_colonnes--1-2-1 {
+      .bloc_2_colonnes__two {
+        flex-direction: column;
+
+        > * {
+          flex: unset;
+        }
+
+        .Card {
+          height: 500px !important;
+        }
+      }
+    }
+  }
+}
+
+#page-fiche-de-match {
+  .actions-container {
+    padding-bottom: 70px;
+  }
+
+  .next-match-widget-container {
+    padding-top: 54px;
+    padding-bottom: 40px;
+    border-top: 1px solid #80808057;
+
+    .Widget {
+      margin-top: 14px;
+      @media screen and (max-width: 1250px) {
+        &.Widget--simple.Widget--half > div {
+          flex: auto;
+        }
+      }
+    }
+  }
+}
+
+.single-content,
+.single-slider {
+  .container-photos {
+    width: 44vw;
+  }
+
+  .article_wysiwyg + .bloc-header-section {
+    margin-top: 50px;
+  }
+}
+
+.page-estac-tv {
+  .media_container {
+    @extend .d-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 368px;
+    gap: 20px;
+
+    @include media-down(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-down(md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 330px;
+      gap: 12px;
+    }
+
+    @include media-down(xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .Card {
+    grid-column: span 1 / span 1;
+    grid-row: span 1 / span 1;
+
+    &:first-child {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+
+      @include media-down(lg) {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+      }
+    }
+
+    &:not(:first-child) {
+      h3 {
+        font-size: 20px !important;
+      }
+    }
+  }
+
+  .iframe_container {
+    @extend .text-align-center;
+
+    margin-bottom: 50px;
+
+    iframe {
+      width: 50%;
+      height: 100%;
+      aspect-ratio: 1267 / 713;
+
+      @include media-down(lg) {
+        width: 70%;
+      }
+
+      @include media-down(md) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.page-calendrier-resultats {
+  .bloc-tri__bandeau-bas__form,
+  .bloc-tri {
+    @extend .d-none;
+  }
+}
+
+
+// Fix safari issue on vh unit mobile device
+@media (pointer: coarse) {
+.has_modale_open {
+    .Site-header {
+      height: 100%;
+
+      .menu-mobile {
+        height: 100%;
+      }
+    }
+  }
+}

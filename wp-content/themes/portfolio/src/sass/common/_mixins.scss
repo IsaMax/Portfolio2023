@@ -1,0 +1,147 @@
+@mixin font-face($name, $file) {
+  @font-face {
+    font-family: "#{$name}";
+    src:
+      url("../../src/fonts/#{$file}.woff2") format("woff2"),
+      url("../../src/fonts/#{$file}.woff") format("woff");
+    font-display: swap;
+  } 
+}
+
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    // Write the media query.
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+$unit: "px";
+
+@each $sideName, $sideValue in $sides {
+  @for $i from 0 through 40 {
+    $property: if($sideName == "", "", -#{$sideValue});
+    $space: $i * 1;
+    $selector: "";
+
+    $selector: #{$sideName}-#{$i};
+
+    .m#{$selector} {
+      margin#{$property}: #{$space + $unit};
+    }
+
+    .mx-#{$i} {
+      margin-left: #{$space + $unit};
+      margin-right: #{$space + $unit};
+    }
+
+    .my-#{$i} {
+      margin-top: #{$space + $unit};
+      margin-bottom: #{$space + $unit};
+    }
+
+    .p#{$selector} {
+      padding#{$property}: #{$space + $unit};
+    }
+
+    .py-#{$i} {
+      padding-top: #{$space + $unit};
+      padding-bottom: #{$space + $unit};
+    }
+
+    .px-#{$i} {
+      padding-left: #{$space + $unit};
+      padding-right: #{$space + $unit};
+    }
+
+    @media (max-width: 768px) {
+      .m#{$selector} {
+        margin#{$property}: #{$space + $unit};
+      }
+
+      .mx-#{$i} {
+        margin-left: #{$space + $unit};
+        margin-right: #{$space + $unit};
+      }
+
+      .my-#{$i} {
+        margin-top: #{$space + $unit};
+        margin-bottom: #{$space + $unit};
+      }
+
+      .p#{$selector} {
+        padding#{$property}: #{$space + $unit};
+      }
+
+      .py-#{$i} {
+        padding-top: #{$space + $unit};
+        padding-bottom: #{$space + $unit};
+      }
+
+      .px-#{$i} {
+        padding-left: #{$space + $unit};
+        padding-right: #{$space + $unit};
+      }
+    }
+  }
+}
+
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin truncateText($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin genereFontSize() {
+  @each $val, $tab in $fontSize {
+    $size: $val;
+    $map: map-deep-get($fontSize, $val);
+
+    .fz-#{$size} {
+      font-size: clamp(
+        map-get($map, "mobile"),
+        4vw,
+        map-get($map, "desktop")
+      );
+    }
+  }
+}
+
+@mixin font-size($size, $lh) {
+  font-size: #{$size}px;
+  line-height: #{$lh}px;
+}
+
+@mixin genereLineHeight() {
+  @each $val, $tab in $lineHeight {
+    $size: $val;
+    $map: map-deep-get($lineHeight, $val);
+
+    .lh-#{$size} {
+      line-height: clamp(
+        map-get($map, "mobile"),
+        5vw,
+        map-get($map, "desktop")
+      );
+    }
+  }
+}
+
+@include genereFontSize();
+@include genereLineHeight();

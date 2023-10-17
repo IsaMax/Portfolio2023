@@ -1,0 +1,31 @@
+.menu-hamburger {
+    span {
+        width: 10px;
+        height: 1px;
+        background-color: #000;
+        display: block;
+        transition: all .2s;
+
+        &:first-child {
+            transform: translateY(5px);
+        }
+
+        &:last-child {
+            transform: translateY(-5px);
+        }
+    }
+
+    &.active {
+        &:first-child {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:last-child {
+            transform: translateY(-5px) rotate(-45deg);
+        }
+    }
+}

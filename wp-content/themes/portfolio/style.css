@@ -1,0 +1,202 @@
+/*
+Theme Name: Portfolio
+Author: Maxime
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sections-services > div > div:first-child > div:before {
+  left: 20%;
+  top: 10%;
+}
+
+.sections-services > div > div:nth-child(2) > div:before {
+  left: 20%;
+  top: 34%;
+}
+
+.sections-services > div > div:nth-child(3) > div:before {
+  left: 40%;
+  top: 23%;
+}
+
+.sections-services > div > div:last-child > div:before {
+  left: 49%;
+  top: 39%;
+}
+
+#splide-avis .splide__arrow {
+  display: none;
+}
+
+#splide-avis .splide__arrow svg {
+  width: 25px;
+}
+
+#splide-avis .splide__slide {
+  box-shadow: rgba(0, 19, 53, 0.06) 0px 9px 27px,
+    rgba(0, 19, 53, 0.043) 0px 3.75998px 11.28px,
+    rgba(0, 19, 53, 0.035) 0px 2.01027px 6.0308px,
+    rgba(0, 19, 53, 0.03) 0px 1.12694px 3.38082px,
+    rgba(0, 19, 53, 0.024) 0px 0.598509px 1.79553px,
+    rgba(0, 19, 53, 0.016) 0px 0.249053px 0.747159px;
+}
+
+#splide-avis .splide__arrow--prev {
+  left: 47% !important;
+  transform: rotate(180deg) !important;
+}
+
+#splide-avis .splide__arrow--next {
+  right: 47% !important;
+}
+
+#splide-logos .splide__slide img {
+  min-height: 100px;
+  max-height: 120px;
+  max-width: 170px;
+  filter: opacity(0.6) grayscale(1);
+  transition: filter 0.3s;
+}
+
+#splide-logos .splide__slide img:hover {
+  filter: none;
+}
+
+.wpcf7-spinner {
+  position: absolute !important;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1 !important;
+  z-index: 20;
+}
+
+.menu-header li:first-child {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  .menu-header li:first-child {
+    display: block;
+  }
+}
+
+@media all and (min-width: 768px) {
+  #splide-avis .splide__arrow {
+    display: block;
+    position: absolute;
+    top: 100% !important;
+    background-color: #fff !important;
+  }
+}
+
+@layer components {
+  /* Hamburger */
+
+  body.hamburger-active {
+    @apply overflow-hidden;
+  }
+
+  .hamburger-active .menu__mobile {
+    @apply visible translate-y-0 pointer-events-auto;
+  }
+
+  .hamburger-active .menu__mobile a {
+    @apply translate-y-0 opacity-100 duration-700 delay-[--delay];
+  }
+
+  .hamburger-active .menu-hamburger span {
+    @apply transition delay-75 bg-black;
+  }
+
+  .hamburger-active .logo a {
+    @apply transition delay-[30ms] text-black;
+  }
+
+  .hamburger-active .menu-hamburger span:first-child {
+    @apply translate-y-1 rotate-45;
+  }
+
+  .hamburger-active .menu-hamburger span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .hamburger-active .menu-hamburger span:last-child {
+    @apply -translate-y-1 -rotate-45;
+  }
+
+  /* Contact Form */
+
+  input {
+    @apply py-1 pl-16 px-4 w-full h-12 border rounded-lg border-[#e2e8f0] focus-within:outline-green;
+  }
+
+  textarea {
+    @apply py-2 pl-16 px-4 w-full border border-[#e2e8f0] rounded-lg focus-within:outline-green;
+  }
+
+  [type="submit"] {
+    @apply px-5 py-3 pr-14 rounded-lg bg-green text-white transition ease-linear hover:bg-hoverGreen cursor-pointer;
+  }
+
+  /* Splide */
+
+  #splide-logos .splide__slide {
+    @apply flex content-center items-center;
+  }
+
+  /* Accordions */
+
+  .js-accordion.is-active .js-accordion__content {
+    @apply h-max pb-24 overflow-visible duration-300;
+  }
+
+  .js-accordion.is-active .js-accordion__content > div {
+    @apply transition-opacity delay-700 duration-300 opacity-100;
+  }
+
+  .js-accordion.is-active .js-accordion__header p {
+    @apply lg:scale-110 xl:scale-150 text-[--bg-color];
+  }
+
+  .js-accordion.is-active .js-accordion__header img {
+    @apply opacity-0;
+  }
+
+  .js-accordion.is-active .js-accordion__header:after {
+    @apply content-['-'];
+  }
+
+  /* WYSIWIG */
+
+  .Wysiwyg p + p {
+    @apply mt-3;
+  }
+  .Wysiwyg h2 + p {
+    @apply mt-4;
+  }
+  .Wysiwyg p + h2 {
+    @apply mt-6;
+  }
+  .Wysiwyg.page-services p {
+    @apply text-fz18;
+  }
+  .Wysiwyg.page-services h2 {
+    @apply text-fz28/[32px] xs:text-fz36 font-barlow font-bold text-darkerColorText;
+  }
+  .Wysiwyg strong {
+    @apply text-blue;
+  }
+  .Wysiwyg strong {
+    @apply text-[--bg-color];
+  }
+  .Wysiwyg .wp-block-button {
+    @apply !mt-8 ml-auto;
+  }
+  .Wysiwyg .wp-block-button .wp-block-button__link {
+    @apply !bg-[--bg-color] font-barlow font-bold border-none !text-white rounded-lg transition-opacity hover:opacity-90;
+  }
+}
